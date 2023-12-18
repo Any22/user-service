@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.example.userservice.controller.UserController;
 import com.example.userservice.dto.DepartmentDTO;
 import com.example.userservice.dto.ResponseDTO;
 import com.example.userservice.dto.UserDTO;
