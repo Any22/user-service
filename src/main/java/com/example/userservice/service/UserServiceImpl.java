@@ -56,7 +56,7 @@ public class UserServiceImpl implements UserService {
 	private DepartmentDTO getDepartmentDetails(String departmentId) {
 	    try {
 	        return webClient.get()
-	                .uri("http://localhost:8081/api/departments/" + departmentId)
+	                .uri("http://localhost:8081/departments/" + departmentId)
 	                .retrieve()
 	                .onStatus(HttpStatusCode::isError, response -> {
 	                    // Log or handle error status

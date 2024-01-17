@@ -17,20 +17,21 @@ import com.example.userservice.entity.User;
 import com.example.userservice.service.UserService;
 
 @RestController
-@RequestMapping("/api/users")
 public class UserController {
 @Autowired 
 private UserService userService;
 
 private static final Log LOGGER = LogFactory.getLog(UserController.class);
-@PostMapping 
+
+@PostMapping(value="/users")
   public ResponseEntity<User> saveUser(@RequestBody User user){
 	User savedUser = userService.saveUser(user);
+	LOGGER.info("Saving user {}"+ savedUser);
 	return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
 	
   }
 
-@GetMapping("{userId}")
+@GetMapping(value="/users/{userId}")
   public ResponseEntity<ResponseDTO> getUser(@PathVariable Long userId){
     LOGGER.info("userId {}"+userId);
 	ResponseDTO responseDTO = userService.getUser(userId);
