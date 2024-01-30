@@ -1,12 +1,11 @@
 package com.example.userservice;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.reactive.function.client.WebClient;
+//https://spring.io/blog/2020/03/25/spring-tips-spring-cloud-loadbalancer/   thing to complete today 23/01
+//https://www.youtube.com/watch?v=tG2dA6zyEgM
 
 
 @SpringBootApplication
@@ -18,15 +17,4 @@ public class UserServiceApplication {
 		SpringApplication.run(UserServiceApplication.class, args);
 	}
 	
-	@Bean 
-	public WebClient webclient() {
-		return WebClient.builder().build();
-		
-	}
-	
-	 @Bean
-	    public ModelMapper modelMapper() {
-	        return new ModelMapper();
-	    }
-
 }
